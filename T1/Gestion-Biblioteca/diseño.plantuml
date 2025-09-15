@@ -1,0 +1,39 @@
+@startuml
+abstract class Producto {
+  +titulo: String
+  +num_ejemplares: int
+}
+
+class Libro{
+  +autor: String
+}
+
+class Revista{
+  +fecha_publicacion: Date
+}
+
+class Película{
+  +director: String
+  +genero: String
+}   
+
+Producto <|-- Libro
+Producto <|-- Revista
+Producto <|-- Película
+
+abstract class Persona {
+  +nombre: String
+  +dni: String
+}
+
+class Socio{
+  +mat_prestados: ArrayList<Producto>
+}
+
+class Administrador{
+  +cargo: Enum{Administrador, Ayudante}
+} 
+
+Persona <|-- Socio
+Persona <|-- Administrador
+@enduml
